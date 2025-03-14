@@ -1,106 +1,106 @@
-Testing with 4 producers and 1 consumers...
-  Run 1 of 10 - 214.416770 us
-  Run 2 of 10 - 208.994105 us
-  Run 3 of 10 - 214.343190 us
-  Run 4 of 10 - 214.800408 us
-  Run 5 of 10 - 234.721323 us
-  Run 6 of 10 - 217.851532 us
-  Run 7 of 10 - 207.673413 us
-  Run 8 of 10 - 212.158277 us
-  Run 9 of 10 - 230.682500 us
-  Run 10 of 10 - 210.685233 us
-  Average wait time: 216.63 microseconds
+Testing with 3 producers and 1 consumers...
+  Run 1 of 10 - 207.874417 us
+  Run 2 of 10 - 174.667310 us
+  Run 3 of 10 - 217.636517 us
+  Run 4 of 10 - 134.461740 us
+  Run 5 of 10 - 172.641857 us
+  Run 6 of 10 - 180.471773 us
+  Run 7 of 10 - 206.939070 us
+  Run 8 of 10 - 156.336780 us
+  Run 9 of 10 - 185.067147 us
+  Run 10 of 10 - 225.866330 us
+  Average wait time: 186.19 microseconds
 
-Testing with 4 producers and 2 consumers...
-  Run 1 of 10 - 174.166650 us
-  Run 2 of 10 - 114.266137 us
-  Run 3 of 10 - 176.569635 us
-  Run 4 of 10 - 175.074793 us
-  Run 5 of 10 - 178.635533 us
-  Run 6 of 10 - 115.955602 us
-  Run 7 of 10 - 174.138105 us
-  Run 8 of 10 - 171.767638 us
-  Run 9 of 10 - 177.485848 us
-  Run 10 of 10 - 179.170210 us
-  Average wait time: 163.72 microseconds
+Testing with 3 producers and 2 consumers...
+  Run 1 of 10 - 155.108410 us
+  Run 2 of 10 - 165.960807 us
+  Run 3 of 10 - 148.533113 us
+  Run 4 of 10 - 156.048830 us
+  Run 5 of 10 - 124.245983 us
+  Run 6 of 10 - 146.839677 us
+  Run 7 of 10 - 121.538573 us
+  Run 8 of 10 - 155.723607 us
+  Run 9 of 10 - 185.759257 us
+  Run 10 of 10 - 155.290500 us
+  Average wait time: 151.50 microseconds
 
-Testing with 4 producers and 4 consumers...
-  Run 1 of 10 - 90.578883 us
-  Run 2 of 10 - 153.309365 us
-  Run 3 of 10 - 94.456260 us
-  Run 4 of 10 - 90.248635 us
-  Run 5 of 10 - 86.917630 us
-  Run 6 of 10 - 86.682708 us
-  Run 7 of 10 - 89.642140 us
-  Run 8 of 10 - 93.660410 us
-  Run 9 of 10 - 97.961450 us
-  Run 10 of 10 - 87.949800 us
-  Average wait time: 97.14 microseconds
+Testing with 3 producers and 4 consumers...
+  Run 1 of 10 - 32.124793 us
+  Run 2 of 10 - 48.074570 us
+  Run 3 of 10 - 38.785997 us
+  Run 4 of 10 - 38.267633 us
+  Run 5 of 10 - 20.225737 us
+  Run 6 of 10 - 41.415277 us
+  Run 7 of 10 - 19.453480 us
+  Run 8 of 10 - 34.793653 us
+  Run 9 of 10 - 19.506327 us
+  Run 10 of 10 - 43.639773 us
+  Average wait time: 33.62 microseconds
 
-Testing with 4 producers and 8 consumers...
-  Run 1 of 10 - 4.865745 us
-  Run 2 of 10 - 4.497980 us
-  Run 3 of 10 - 4.207605 us
-  Run 4 of 10 - 16.491747 us
-  Run 5 of 10 - 30.001855 us
-  Run 6 of 10 - 4.813887 us
-  Run 7 of 10 - 21.788835 us
-  Run 8 of 10 - 22.524105 us
-  Run 9 of 10 - 37.301340 us
-  Run 10 of 10 - 22.593643 us
-  Average wait time: 16.90 microseconds
+Testing with 3 producers and 8 consumers...
+  Run 1 of 10 - 4.311033 us
+  Run 2 of 10 - 3.948117 us
+  Run 3 of 10 - 4.900410 us
+  Run 4 of 10 - 4.359783 us
+  Run 5 of 10 - 4.084623 us
+  Run 6 of 10 - 4.086373 us
+  Run 7 of 10 - 4.157133 us
+  Run 8 of 10 - 4.236240 us
+  Run 9 of 10 - 4.613980 us
+  Run 10 of 10 - 4.131680 us
+  Average wait time: 4.28 microseconds
 
-Testing with 4 producers and 16 consumers...
-  Run 1 of 10 - 2.936022 us
-  Run 2 of 10 - 2.855605 us
-  Run 3 of 10 - 2.609163 us
-  Run 4 of 10 - 3.936625 us
-  Run 5 of 10 - 3.418435 us
-  Run 6 of 10 - 2.783565 us
-  Run 7 of 10 - 2.612815 us
-  Run 8 of 10 - 2.633128 us
-  Run 9 of 10 - 2.708045 us
-  Run 10 of 10 - 2.872408 us
-  Average wait time: 2.93 microseconds
+Testing with 3 producers and 16 consumers...
+  Run 1 of 10 - 4.445490 us
+  Run 2 of 10 - 4.485987 us
+  Run 3 of 10 - 4.519840 us
+  Run 4 of 10 - 4.642673 us
+  Run 5 of 10 - 4.384177 us
+  Run 6 of 10 - 4.665037 us
+  Run 7 of 10 - 4.531613 us
+  Run 8 of 10 - 4.467243 us
+  Run 9 of 10 - 4.546210 us
+  Run 10 of 10 - 4.398497 us
+  Average wait time: 4.50 microseconds
 
-Testing with 4 producers and 32 consumers...
-  Run 1 of 10 - 4.219865 us
-  Run 2 of 10 - 5.062315 us
-  Run 3 of 10 - 5.891670 us
-  Run 4 of 10 - 4.999932 us
-  Run 5 of 10 - 5.050192 us
-  Run 6 of 10 - 5.397715 us
-  Run 7 of 10 - 4.875343 us
-  Run 8 of 10 - 4.978355 us
-  Run 9 of 10 - 5.600752 us
-  Run 10 of 10 - 4.529698 us
-  Average wait time: 5.06 microseconds
+Testing with 3 producers and 32 consumers...
+  Run 1 of 10 - 4.937987 us
+  Run 2 of 10 - 4.725147 us
+  Run 3 of 10 - 4.867670 us
+  Run 4 of 10 - 4.737003 us
+  Run 5 of 10 - 4.934103 us
+  Run 6 of 10 - 4.975403 us
+  Run 7 of 10 - 4.963180 us
+  Run 8 of 10 - 4.963810 us
+  Run 9 of 10 - 5.177333 us
+  Run 10 of 10 - 5.163387 us
+  Average wait time: 4.94 microseconds
 
-Testing with 4 producers and 64 consumers...
-  Run 1 of 10 - 6.941467 us
-  Run 2 of 10 - 6.552243 us
-  Run 3 of 10 - 6.956095 us
-  Run 4 of 10 - 5.832433 us
-  Run 5 of 10 - 5.756342 us
-  Run 6 of 10 - 7.024567 us
-  Run 7 of 10 - 6.052850 us
-  Run 8 of 10 - 6.049938 us
-  Run 9 of 10 - 5.728595 us
-  Run 10 of 10 - 6.870435 us
-  Average wait time: 6.37 microseconds
+Testing with 3 producers and 64 consumers...
+  Run 1 of 10 - 5.193833 us
+  Run 2 of 10 - 5.290243 us
+  Run 3 of 10 - 4.830277 us
+  Run 4 of 10 - 5.040100 us
+  Run 5 of 10 - 4.957780 us
+  Run 6 of 10 - 5.599693 us
+  Run 7 of 10 - 5.066760 us
+  Run 8 of 10 - 5.026257 us
+  Run 9 of 10 - 4.899443 us
+  Run 10 of 10 - 4.938647 us
+  Average wait time: 5.08 microseconds
 
-Testing with 4 producers and 128 consumers...
-  Run 1 of 10 - 6.851020 us
-  Run 2 of 10 - 8.012540 us
-  Run 3 of 10 - 6.741485 us
-  Run 4 of 10 - 7.157850 us
-  Run 5 of 10 - 7.591545 us
-  Run 6 of 10 - 7.502945 us
-  Run 7 of 10 - 7.690890 us
-  Run 8 of 10 - 7.274332 us
-  Run 9 of 10 - 6.834232 us
-  Run 10 of 10 - 7.673712 us
-  Average wait time: 7.33 microseconds
+Testing with 3 producers and 128 consumers...
+  Run 1 of 10 - 5.178990 us
+  Run 2 of 10 - 4.987447 us
+  Run 3 of 10 - 5.023157 us
+  Run 4 of 10 - 5.106647 us
+  Run 5 of 10 - 5.011757 us
+  Run 6 of 10 - 5.042587 us
+  Run 7 of 10 - 5.070550 us
+  Run 8 of 10 - 5.009657 us
+  Run 9 of 10 - 5.090523 us
+  Run 10 of 10 - 4.997427 us
+  Average wait time: 5.05 microseconds
 
 Experiments completed. Results saved to wait_time_results.txt
 Creating plot...

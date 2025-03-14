@@ -8,14 +8,14 @@
 gcc -o producer_consumer ./../prod-cons.c -lpthread -lm
 
 # Define the number of producers
-PRODUCERS=4
+PRODUCERS=3
 
 # Define the range of consumers to test
 MIN_CONSUMERS=2
 MAX_CONSUMERS=100
 
 # Number of runs per configuration to ensure stable results
-RUNS_PER_CONFIG=3
+RUNS_PER_CONFIG=10
 
 # Output file
 OUTPUT_FILE="wait_time_results.txt"
