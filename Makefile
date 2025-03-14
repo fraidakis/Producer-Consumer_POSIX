@@ -1,6 +1,6 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = 
 LDFLAGS = -lm -pthread
 
 # Target executable

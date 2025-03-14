@@ -14,8 +14,6 @@
  *	Revised	: 13 March 2025
  */
 
-// !Best performance with 250 consumers... While proccesor is 6 core 12 threads.
-
 #include <pthread.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -25,7 +23,7 @@
 #include <sys/time.h>
 #include <time.h>
 
-#define QUEUESIZE 10
+#define QUEUESIZE 100
 #define LOOP 100000
 #define WORK 10
 
@@ -62,7 +60,7 @@ typedef struct
 
 queue *queueInit(void);
 void queueDelete(queue *q);
-void queueAdd(queue *q, struct workFunction in);
+void queueAdd(queue *q, struct queueItem in);
 void queueDel(queue *q, struct queueItem *out);
 
 // Statistics structure to tracschedulersk wait times
@@ -77,6 +75,7 @@ statistics *statsInit(void);
 void statsDelete(statistics *stats);
 void statsAdd(statistics *stats, long wait_time_usec);
 double statsGetAverage(statistics *stats);
+long total_time_us(struct timespec *start, struct timespec *end);
 
 typedef struct
 {
@@ -126,9 +125,9 @@ int main(int argc, char *argv[])
     exit(1);
   }
 
-  // Start timer 
-  struct timespec start, finish;
-  clock_gettime(CLOCK_MONOTONIC, &start);
+  // Start total timer 
+  // struct timespec start, finish;
+  // clock_gettime(CLOCK_MONOTONIC, &start);
 
   // Create the producer and consumer threads
   for (int i = 0; i < p; i++)
@@ -162,16 +161,10 @@ int main(int argc, char *argv[])
     pthread_join(con[i], NULL);
   }
 
-  // Stop timer
-  clock_gettime(CLOCK_MONOTONIC, &finish);
-
-  // Calculate the elapsed time
-  long elapsed_time_nsec = (finish.tv_sec - start.tv_sec) * 1000000000L +
-                           (finish.tv_nsec - start.tv_nsec);
-
-  // Convert to microseconds
-  long elapsed_time_ms = elapsed_time_nsec / 1000000;
-  printf("Elapsed time: %ld us\n", elapsed_time_ms);
+  // Stop total timer
+  // clock_gettime(CLOCK_MONOTONIC, &finish);
+  // long elapsed_time_us = total_time_us(&start, &finish);
+  // printf("Elapsed time: %ld us\n", elapsed_time_ms);
 
   // Print the average wait time
   double avg_wait_time = statsGetAverage(stats);
@@ -180,7 +173,7 @@ int main(int argc, char *argv[])
   queueDelete(fifo);
   statsDelete(stats);
 
-  printf("(full, empty): (%d, %d)\n", full, empty);
+  // printf("(full, empty): (%d, %d)\n", full, empty);
 
   return 0;
 }
@@ -210,6 +203,11 @@ void *producer(void *q)
 
     // *********************************************************
 
+    // Make an item with work and production timestamp to add to the queue
+    struct queueItem item;
+    item.wf = wf;
+    clock_gettime(CLOCK_MONOTONIC, &item.timestamp);
+
     pthread_mutex_lock(fifo->mut);
     while (fifo->full)
     {
@@ -218,7 +216,7 @@ void *producer(void *q)
       pthread_cond_wait(fifo->notFull, fifo->mut);
     }
 
-    queueAdd(fifo, wf);
+    queueAdd(fifo, item);
     pthread_mutex_unlock(fifo->mut);
     pthread_cond_signal(fifo->notEmpty);
   }
@@ -256,12 +254,8 @@ void *consumer(void *args)
     struct timespec dequeueTime;
     clock_gettime(CLOCK_MONOTONIC, &dequeueTime);
 
-    // Calculate wait time in nanoseconds
-    long wait_time_nsec = (dequeueTime.tv_sec - item.timestamp.tv_sec) * 1000000000L +
-                          (dequeueTime.tv_nsec - item.timestamp.tv_nsec);
+    long wait_time_usec = total_time_us(&item.timestamp, &dequeueTime);
 
-    // Convert to microseconds
-    long wait_time_usec = wait_time_nsec / 1000;
     statsAdd(stats, wait_time_usec);
     // printf("Consumer: Wait time: %ld us\n", wait_time_usec);
 
@@ -326,13 +320,9 @@ void queueDelete(queue *q)
   free(q);
 }
 
-void queueAdd(queue *q, struct workFunction in)
+void queueAdd(queue *q, struct queueItem in)
 {
-  struct queueItem item;
-  item.wf = in;
-  clock_gettime(CLOCK_MONOTONIC, &item.timestamp); // Use CLOCK_MONOTONIC for reliable timing
-
-  q->buf[q->tail] = item;
+  q->buf[q->tail] = in;
   q->tail++;
 
   if (q->tail == QUEUESIZE)
@@ -424,3 +414,8 @@ double statsGetAverage(statistics *stats)
   return avg;
 }
 
+long total_time_us(struct timespec *start, struct timespec *end)
+{
+  return (end->tv_sec - start->tv_sec) * 1000000L +
+         (end->tv_nsec - start->tv_nsec) / 1000L;
+}
