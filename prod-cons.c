@@ -23,7 +23,7 @@
 #include <sys/time.h>
 #include <time.h>
 
-#define QUEUESIZE 100
+#define QUEUESIZE 1000
 #define LOOP 100000
 #define WORK 10
 

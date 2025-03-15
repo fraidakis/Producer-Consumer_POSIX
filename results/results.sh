@@ -15,7 +15,7 @@ MIN_CONSUMERS=2
 MAX_CONSUMERS=100
 
 # Number of runs per configuration to ensure stable results
-RUNS_PER_CONFIG=10
+RUNS_PER_CONFIG=3
 
 # Output file
 OUTPUT_FILE="wait_time_results.txt"

@@ -1,2 +1,5 @@
 /.vscode
 /prod-cons
+/results.txt
+/slurm.sh
+/plot.py
